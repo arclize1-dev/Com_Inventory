@@ -1,3 +1,330 @@
-tbody tr:active {
-    color: red;
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.main-table {
+    margin: 1rem;
+    justify-self: center;
+    width: 90%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.search-table td input {
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+}
+
+.main-table thead th {
+    border: 1px solid;
+}
+
+.main-table tbody {
+    cursor: pointer;
+}
+
+.main-table tbody tr:nth-child(even) {
+    background-color: #d2ebfe;
+}
+
+.main-table tbody tr:nth-child(odd) {
+    background-color: #e3f7ff;
+}
+
+.main-table tbody tr td {
+    border-right: 1px solid;
+    padding: 5px;
+}
+
+.main-table tbody tr:hover {
+    background-color: #fff7ea;
+}
+
+/*ปรับขนาดตารางแต่ละ Column*/
+/*Column ที่ 1*/
+.main-table thead th:nth-child(1), .trow td:nth-child(1) {
+    width: 6vw;
+}
+
+.trow td:nth-child(1) {
+    text-align: center;
+    border-left: 1px solid;
+}
+
+.tdEQCode {
+    border-left: 1px solid;
+}
+
+/*Column ที่ 2*/
+.main-table thead th:nth-child(2), .trow td:nth-child(2) {
+    width: 6vw;
+}
+
+.trow td:nth-child(2) {
+    text-align: center;
+}
+
+/*Column ที่ 3*/
+.main-table thead th:nth-child(3), .trow td:nth-child(3) {
+    width: 5vw;
+}
+
+.trow td:nth-child(3) {
+    text-align: center;
+}
+
+/*Column ที่ 4*/
+.main-table thead th:nth-child(4), .trow td:nth-child(4) {
+    width: 14vw;
+}
+
+.trow td:nth-child(4) {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/*Column ที่ 5*/
+.main-table thead th:nth-child(5), .trow td:nth-child(5) {
+    width: 4vw;
+}
+
+.trow td:nth-child(5) {
+    text-align: center;
+}
+
+/*Column ที่ 6*/
+.main-table thead th:nth-child(6), .trow td:nth-child(6) {
+    width: 6vw;
+}
+
+.trow td:nth-child(6) {
+    text-align: center;
+}
+
+/*Column ที่ 7*/
+.main-table thead th:nth-child(7), .trow td:nth-child(7) {
+    width: 8vw;
+}
+
+.trow td:nth-child(7) {
+    text-align: center;
+}
+
+/*Column ที่ 8*/
+.main-table thead th:nth-child(8), .trow td:nth-child(8) {
+    width: 20vw;
+}
+
+.trow td:nth-child(8) {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/*Column ที่ 9*/
+.main-table thead th:nth-child(9), .trow td:nth-child(9) {
+    width: 4vw;
+}
+
+.trow td:nth-child(9) {
+    text-align: center;
+}
+
+.infoModal {
+    display: none;
+}
+
+.infoModal[open] {
+    justify-self: center;
+    align-self: center;
+    border: none;
+    outline: none;
+    display: block;
+    background-color: transparent;
+    
+}
+
+.info-group {
+    display: flex;
+}
+
+.button-group {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.button-group button {
+    margin-top: 1rem;
+    width: 50%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.m-info {
+    background-color: whitesmoke;
+    padding-right: 0.5rem;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+}
+
+.modal-header h3 {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.m-User {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.m-Unit {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.modal-body {
+    padding: 0.5rem;
+}
+
+.m-Additional-Detail {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.m-Detail-Group {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-logTable {
+    margin-left: 1rem;
+    background-color: aliceblue;
+    padding: 1rem;
+}
+
+.log-table {
+    border-spacing: 0;
+}
+
+.log-table thead th {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left:1px solid ;
+}
+
+.log-table thead th:last-child {
+    border-right: 1px solid;
+}
+
+.log-table tbody tr td{
+    border-left: 1px solid;
+}
+
+.log-table tbody tr td:last-child {
+    border-right: 1px solid;
+}
+
+.log-table tbody tr:last-child td {
+    border-bottom: 1px solid;
+}
+
+.log-table thead th:nth-child(1), .log-table tbody td:nth-child(1) {
+    width: 5rem;
+    text-align: center;
+}
+
+.log-table thead th:nth-child(2), .log-table tbody td:nth-child(2) {
+    width: 6rem;
+    text-align: center;
+}
+
+.log-table thead th:nth-child(3), .log-table tbody td:nth-child(3) {
+    width: 5rem;
+    text-align: center;
+}
+
+.log-table thead th:nth-child(4), .log-table tbody td:nth-child(4) {
+    width: 8em;
+    text-align: center;
+}
+
+.log-table thead th:nth-child(5), .log-table tbody td:nth-child(5) {
+    width: 10rem;
+    text-align: center;
+}
+
+.log-table thead th:nth-child(6), .log-table tbody td:nth-child(6) {
+    width: 6rem;
+    text-align: center;
+}
+
+.updateUserModal {
+    justify-self: center;
+    align-self: center;
+}
+
+.updateUserHeader {
+    text-align: center;
+}
+
+.updateUserHeader h3 {
+    font-size: 2rem;
+}
+
+.input_ID_Name_Unit {
+    display: flex;
+    justify-self: center;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.inputID {
+    width: 5rem;
+    text-align: center;
+}
+
+.inputName {
+    width: 10rem;
+    text-align: center;
+}
+
+.inputUnit {
+    width: 2rem;
+    text-align: center;
+}
+
+.input_Action_Detail {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+}
+
+.input_Action_Detail input {
+    width: 100%;
+}
+
+.updateButton {
+    display: flex;
+    justify-content: center;
+}
+
+.updateButton button {
+    padding: 0.75rem 4rem;
+    font-size: 1.5rem;
 }

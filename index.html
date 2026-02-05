@@ -7,12 +7,128 @@
     <title>Computer_Inventory</title>
 </head>
 <body>
-    <table>
+    <table class="main-table">
         <thead>
             <th>EQCode</th> <th>LatestUpdate</th> <th>ID</th> <th>Name</th> <th>Unit</th> <th>Location</th> <th>Action</th> <th>Detail</th> <th>Signed</th>
         </thead>
+        <tbody class="search-table">
+            <td class="tdEQCode">
+                <input
+                type="search"
+                id="EQCode"
+                placeholder="พิมพ์ EQCode"
+                class="sEQCode"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="latestUpdate"
+                placeholder="ใส่วันที่"
+                class="slatestUpdate"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="ID"
+                placeholder="ID พนักงาน"
+                class="sID"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Name"
+                placeholder="ชื่อพนักงาน"
+                class="sName"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Unit"
+                placeholder="หน่วยงาน"
+                class="sUnit"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Location"
+                placeholder="ตำแหน่งที่อยู่"
+                class="sLocation"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Action"
+                placeholder="Action ที่ทำ"
+                class="sAction"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Detail"
+                placeholder="รายละเอียดเพิ่มเติม"
+                class="sDetail"
+                oninput="multiFilter()"
+            ></td>
+            <td>
+                <input
+                type="search"
+                id="Signed"
+                placeholder="ลงชื่อ"
+                class="sSigned"
+                oninput="multiFilter()"
+            ></td>
+        </tbody>
         <tbody id="table-body"></tbody>
     </table>
+    <dialog id="infoModal" class="infoModal">
+        <div class="info-group">
+            <div class="m-info">
+                <div class="modal-header">
+                    <h3 id="m-name">ชื่ออุปกรณ์</h3>
+                </div>
+            <div class="modal-body">
+                <p class="m-User">User: <span id="m-User">Name Surname</span></p>
+                <p><span class="m-Unit">Unit: </span><span id="m-Unit"></span></p>
+                <p class="m-Additional-Detail"><strong>Additional Detail</strong></p>
+                <div class="m-Detail-Group">
+                    <p>S/N: <span id="m-SerialNumber">5EBE643ESF</span></p>
+                    <p>Model: <span id="m-Model">Computer</span></p>
+                    <p>Base: <span id="m-Base"></span></p>
+                </div>
+            </div>
+        </div>
+            <div class="modal-logTable">
+                <table class="log-table">
+                    <thead>
+                        <th>Date</th><th>ID</th><th>Location</th><th>Action</th><th>Detail</th><th>Signed</th>
+                    </thead>
+                    <tbody id="m-log-table"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="button-group">
+            <button id="updateUserButton" class="updateUserButton">Update User</button>
+            
+        </div>
+    </dialog>
+    <dialog id="updateUserModal" class="updateUserModal">
+        <div class="updateUserHeader">
+            <h3>Update User</h3>
+            <div class="inputEQCode"><span id="inputEQCode"></span></div>
+            <div class="input_ID_Name_Unit"><p>ID</p><input type="text" id="inputID"><p>Name</p><input type="text" id="inputName"><p>Unit</p><input type="text" id="inputUnit"></div>
+            <div class="input_Action_Detail"><p>Action</p><input type="text" id="inputAction"><p>Detail</p><input type="text" id="inputDetail"></div>
+        </div>
+        <div class="updateButton">
+            <button id="updateB">Update</button>
+        </div>
+    </dialog>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
